@@ -16,11 +16,20 @@ src = ['src/amalgamated.cpp']
 bx_dep = dependency('bx', fallback: ['bx', 'bx_dep'])
 bimg_dep = dependency('bimg', fallback: ['bimg', 'bimg_dep'])
 
+cpp_args = []
+if host_machine.system() == 'darwin'
+	appleframeworks_dep = dependency('appleframeworks', modules : ['Metal', 'QuartzCore', 'Cocoa'])
+	cpp_args = ['-ObjC++']
+else
+endif
+
 lib = static_library(
   'libbgfx',
   src,
   include_directories : includes,
-  dependencies        : [bx_dep, bimg_dep]
+  dependencies        : [bx_dep, bimg_dep],
+	cpp_args     			  : cpp_args
+	
 )
 
 bgfx_dep = declare_dependency(include_directories : includes, link_with: lib)
