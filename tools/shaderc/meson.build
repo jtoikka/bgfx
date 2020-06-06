@@ -10,7 +10,7 @@ includes = [
   '.'
 ]
 
-dependencies = [ bgfx_dep ]
+dependencies = [ bgfx_dep, spirv_dep ]
 
 
 shaderc_lib = static_library(
