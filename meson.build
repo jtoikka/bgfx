@@ -1,4 +1,4 @@
-project('bgfx', 'cpp', version : '1.0.0', license: 'BSD 2-Clause', default_options : ['cpp_std=c++14'])
+project('bgfx', 'c', 'cpp', version : '1.0.0', license: 'BSD 2-Clause', default_options : ['cpp_std=c++14'])
 
 includes = [
 	'include',
@@ -27,7 +27,7 @@ if host_machine.system() == 'darwin'
 else
 endif
 
-lib = static_library(
+bgfx_lib = static_library(
   'libbgfx',
   src,
   include_directories : includes,
@@ -35,6 +35,6 @@ lib = static_library(
 	objcpp_args         : objcpp_args	
 )
 
-bgfx_dep = declare_dependency(include_directories : includes, link_with: lib, dependencies: dependencies)
+bgfx_dep = declare_dependency(include_directories : includes, link_with: bgfx_lib, dependencies: dependencies)
 
-subdir('tools')
+# subdir('tools')

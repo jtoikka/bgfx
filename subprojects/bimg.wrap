@@ -1,0 +1,4 @@
+[wrap-git]
+directory = bimg
+url = https://github.com/jtoikka/bimg.git
+revision = head

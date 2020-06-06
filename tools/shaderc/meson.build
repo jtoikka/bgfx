@@ -10,6 +10,9 @@ includes = [
   '.'
 ]
 
+dependencies = [ bgfx_dep ]
+
+
 shaderc_lib = static_library(
   'shaderc',
   src,
