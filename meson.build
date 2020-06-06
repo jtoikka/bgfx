@@ -36,3 +36,5 @@ lib = static_library(
 )
 
 bgfx_dep = declare_dependency(include_directories : includes, link_with: lib, dependencies: dependencies)
+
+subdir('tools')
