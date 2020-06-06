@@ -24,7 +24,6 @@ if host_machine.system() == 'darwin'
 	appleframeworks_dep = dependency('appleframeworks', modules : ['Metal', 'QuartzCore', 'Cocoa'])
 	dependencies += appleframeworks_dep
 	objcpp_args = ['-std=c++14']
-else
 endif
 
 bgfx_lib = static_library(
