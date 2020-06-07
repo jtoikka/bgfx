@@ -37,4 +37,7 @@ bgfx_lib = static_library(
 bgfx_dep = declare_dependency(include_directories : includes, link_with: bgfx_lib, dependencies: dependencies)
 
 subdir('3rdparty')
-subdir('tools')
+
+if get_option('build_tools')
+	subdir('tools')
+endif
