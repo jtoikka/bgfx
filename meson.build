@@ -38,6 +38,7 @@ bgfx_dep = declare_dependency(include_directories : includes, link_with: bgfx_li
 
 subdir('3rdparty')
 
-if get_option('build_tools')
+#if building for native, also build tools
+if not meson.is_cross_build()  
 	subdir('tools')
 endif
