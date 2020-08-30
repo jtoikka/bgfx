@@ -679,9 +679,10 @@ namespace bgfx
 		{
 			Limits();
 
-			uint16_t maxEncoders;     //!< Maximum number of encoder threads.
-			uint32_t transientVbSize; //!< Maximum transient vertex buffer size.
-			uint32_t transientIbSize; //!< Maximum transient index buffer size.
+			uint16_t maxEncoders;       //!< Maximum number of encoder threads.
+			uint32_t minResourceCbSize; //!< Minimum resource command buffer size.
+			uint32_t transientVbSize;   //!< Maximum transient vertex buffer size.
+			uint32_t transientIbSize;   //!< Maximum transient index buffer size.
 		};
 
 		Limits limits; // Configurable runtime limits.
@@ -779,6 +780,7 @@ namespace bgfx
 			uint32_t maxUniforms;             //!< Maximum number of uniform handles.
 			uint32_t maxOcclusionQueries;     //!< Maximum number of occlusion query handles.
 			uint32_t maxEncoders;             //!< Maximum number of encoder threads.
+			uint32_t minResourceCbSize;       //!< Minimum resource command buffer size.
 			uint32_t transientVbSize;         //!< Maximum transient vertex buffer size.
 			uint32_t transientIbSize;         //!< Maximum transient index buffer size.
 		};
@@ -837,7 +839,7 @@ namespace bgfx
 
 	/// Instance data buffer info.
 	///
-	/// @attention C99 equivalent is `bgfx_texture_info_t`.
+	/// @attention C99 equivalent is `bgfx_instance_data_buffer_t`.
 	///
 	struct InstanceDataBuffer
 	{
